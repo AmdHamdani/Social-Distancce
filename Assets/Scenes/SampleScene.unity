@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 340660851}
   - component: {fileID: 340660850}
   - component: {fileID: 340660852}
+  - component: {fileID: 340660853}
   m_Layer: 0
   m_Name: Agent (3)
   m_TagString: Untagged
@@ -207,6 +208,32 @@ MonoBehaviour:
   speed: 1
   stopRange: 2
   target: {fileID: 1592430226}
+--- !u!61 &340660853
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340660849}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +327,7 @@ GameObject:
   - component: {fileID: 1070743926}
   - component: {fileID: 1070743925}
   - component: {fileID: 1070743927}
+  - component: {fileID: 1070743928}
   m_Layer: 0
   m_Name: Agent (2)
   m_TagString: Untagged
@@ -384,6 +412,32 @@ MonoBehaviour:
   speed: 1
   stopRange: 2
   target: {fileID: 1592430226}
+--- !u!61 &1070743928
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070743924}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1427320841
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +449,7 @@ GameObject:
   - component: {fileID: 1427320843}
   - component: {fileID: 1427320842}
   - component: {fileID: 1427320844}
+  - component: {fileID: 1427320845}
   m_Layer: 0
   m_Name: Agent (1)
   m_TagString: Untagged
@@ -479,6 +534,32 @@ MonoBehaviour:
   speed: 1
   stopRange: 2
   target: {fileID: 1592430226}
+--- !u!61 &1427320845
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427320841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1592430224
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +650,7 @@ GameObject:
   - component: {fileID: 1886586025}
   - component: {fileID: 1886586024}
   - component: {fileID: 1886586026}
+  - component: {fileID: 1886586027}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -653,6 +735,32 @@ MonoBehaviour:
   speed: 1
   stopRange: 2
   target: {fileID: 1592430226}
+--- !u!61 &1886586027
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886586023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1988722400
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +772,7 @@ GameObject:
   - component: {fileID: 1988722402}
   - component: {fileID: 1988722401}
   - component: {fileID: 1988722403}
+  - component: {fileID: 1988722404}
   m_Layer: 0
   m_Name: Agent (4)
   m_TagString: Untagged
@@ -748,3 +857,29 @@ MonoBehaviour:
   speed: 1
   stopRange: 2
   target: {fileID: 1592430226}
+--- !u!61 &1988722404
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988722400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

@@ -11,6 +11,7 @@ public class AgentBehaviour : MonoBehaviour
     public Transform target;
 
     private float stopPoint;
+    private bool isDragged;
 
     private void Start()
     {
@@ -19,13 +20,35 @@ public class AgentBehaviour : MonoBehaviour
 
     private void Update()
     {
-        MoveTo();
+        if ((Vector3.Distance(transform.position, target.position) > stopPoint) && !isDragged)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+
+        if (isDragged)
+        {
+            transform.position = GetMousePosition();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragged = false;
+        }
     }
 
-
-    private void MoveTo()
+    private void OnMouseDown()
     {
-        if(Vector3.Distance(transform.position, target.position) > stopPoint)
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(Input.GetMouseButton(0))
+        {
+            isDragged = true;
+        } 
+        
+    }
+
+    private Vector3 GetMousePosition()
+    {
+        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pos.z = 0;
+        return pos;
     }
 }
