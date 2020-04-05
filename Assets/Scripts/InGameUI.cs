@@ -16,9 +16,9 @@ public class InGameUI : MonoBehaviour
     {
         totalPeople = GameObject.FindGameObjectsWithTag("Person").Length - 1;
 
-        ControlVariable.Instance.TotalInfected = 0;
+        ControlVariable.Ins.TotalInfected = 0;
 
-        interval = ControlVariable.Instance.TimerInMinutes;
+        interval = ControlVariable.Ins.TimerInMinutes;
 
         StartCoroutine(UpdateTime());
     }
@@ -38,9 +38,9 @@ public class InGameUI : MonoBehaviour
                 interval -= 1;
             }
 
-            if (second <= 0 & interval <= 0)
+            if ((second <= 0 & interval <= 0) || totalPeople == ControlVariable.Ins.TotalInfected)
             {
-                Debug.Log("Time Up");
+                Debug.Log("Game Over");
                 StopCoroutine(UpdateTime());
             }
             else
@@ -49,7 +49,7 @@ public class InGameUI : MonoBehaviour
             }
 
             timerText.text = interval + " : " + second;
-            infectedCounter.text = "Infected : " + ControlVariable.Instance.TotalInfected + " / " + totalPeople;
+            infectedCounter.text = "Infected : " + ControlVariable.Ins.TotalInfected + " / " + totalPeople;
         }
     }
 

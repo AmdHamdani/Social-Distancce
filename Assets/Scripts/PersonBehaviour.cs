@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PersonBehaviour : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PersonBehaviour : MonoBehaviour
 
     private void Start()
     {
+        SetSpeed();
         SetTarget();
         SetStopPoint();
     }
@@ -56,6 +58,11 @@ public class PersonBehaviour : MonoBehaviour
         }
     }
 
+    private void SetSpeed()
+    {
+        speed = ControlVariable.Ins.PersonSpeed;
+    }
+
     private void SetTarget()
     {
         target = FindObjectOfType<TargetPool>().CurrentTarget;
@@ -63,7 +70,7 @@ public class PersonBehaviour : MonoBehaviour
 
     private void SetStopPoint()
     {
-        stopPoint = Random.Range(0, stopRange);
+        stopPoint = UnityEngine.Random.Range(0, stopRange);
     }
 
     private Vector3 GetMousePosition()
