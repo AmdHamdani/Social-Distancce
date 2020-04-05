@@ -11,7 +11,7 @@ public class ControlVariable : ScriptableObject
     [SerializeField] private float minSpeed;
     [SerializeField] private float maxSpeed;
     [Header("Game Timer")]
-    [SerializeField] private float timerInMinutes;
+    [SerializeField] private float timerInSeconds;
     [HideInInspector]
     [SerializeField] private float totalInfected;
 
@@ -39,7 +39,7 @@ public class ControlVariable : ScriptableObject
         }
     }
 
-    public float TimerInMinutes { get => timerInMinutes; }
+    public float TimerInSeconds { get => timerInSeconds; }
 
     public float TotalInfected { get => totalInfected; set => totalInfected = value; }
 }
