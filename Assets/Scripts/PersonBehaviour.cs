@@ -13,6 +13,7 @@ public class PersonBehaviour : MonoBehaviour
 
     private void Start()
     {
+        SetTarget();
         SetStopPoint();
     }
 
@@ -42,6 +43,7 @@ public class PersonBehaviour : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             isDragged = false;
+            SetTarget();
             SetStopPoint();
         }
     }
@@ -52,6 +54,11 @@ public class PersonBehaviour : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+    }
+
+    private void SetTarget()
+    {
+        target = FindObjectOfType<TargetPool>().CurrentTarget;
     }
 
     private void SetStopPoint()
