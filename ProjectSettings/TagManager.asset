@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Person
+  - Target
   layers:
   - Default
   - TransparentFX
