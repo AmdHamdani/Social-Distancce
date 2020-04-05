@@ -4,20 +4,34 @@
 public class ControlVariable : ScriptableObject
 {
 
-    public float MinInfectionTime;
-    public float MaxInfectionTime;
-    public float TimerInMinutes;
-    public float TotalInfected;
+    [Header("Infection Speed")]
+    [SerializeField] private float minInfectionTime;
+    [SerializeField] private float maxInfectionTime;
+    [Header("Person Speed")]
+    [SerializeField] private float minSpeed;
+    [SerializeField] private float maxSpeed;
+    [Header("Game Timer")]
+    [SerializeField] private float timerInMinutes;
+    [HideInInspector]
+    [SerializeField] private float totalInfected;
+
+    public float PersonSpeed
+    {
+        get
+        {
+            return Random.Range(minSpeed, maxSpeed);
+        }
+    }
 
     public float InfectionTime
     {
         get
         {
-            return Random.Range(MinInfectionTime, MaxInfectionTime);
+            return Random.Range(minInfectionTime, maxInfectionTime);
         }
     }
 
-    public static ControlVariable Instance
+    public static ControlVariable Ins
     {
         get
         {
@@ -25,4 +39,7 @@ public class ControlVariable : ScriptableObject
         }
     }
 
+    public float TimerInMinutes { get => timerInMinutes; }
+
+    public float TotalInfected { get => totalInfected; set => totalInfected = value; }
 }
