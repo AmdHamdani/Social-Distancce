@@ -49,6 +49,7 @@ public class VirusBehaviour : MonoBehaviour
             if (interval <= 0)
             {
                 infection = InfectionState.Infected;
+                ControlVariable.Instance.TotalInfected += 1;
                 ShowIndicator();
             }
         }
@@ -71,7 +72,15 @@ public class VirusBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
+        foreach (var person in nearestAgent)
+        {
+            var virus = GetComponent<VirusBehaviour>();
+            if (virus == null)
+            {
+                virus = person.gameObject.AddComponent<VirusBehaviour>();
+                virus.StartInfection();
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
