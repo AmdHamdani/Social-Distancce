@@ -13,7 +13,7 @@ public class InGameUI : MonoBehaviour
     public Text score;
     public Button homeButton;
 
-    private float interval = 0;
+    private float seconds = 0;
     private float totalPeople = 0;
 
     void Start()
@@ -24,47 +24,44 @@ public class InGameUI : MonoBehaviour
 
         ControlVariable.Ins.TotalInfected = 0;
 
-        interval = ControlVariable.Ins.TimerInMinutes;
+        seconds = ControlVariable.Ins.TimerInSeconds;
 
         StartCoroutine(UpdateTime());
     }
 
     private IEnumerator UpdateTime()
     {
-        interval -= 1;
-        var second = 59;
-        timerText.text = interval + " : " + second;
-        while (interval <= 0)
+        timerText.text = "0 : " + seconds;
+        while (seconds > 0)
         {
             yield return new WaitForSeconds(1f);
 
-            if (second <= 0)
-            {
-                second = 59;
-                interval -= 1;
-            }
+            infectedCounter.text = "Infected : " + ControlVariable.Ins.TotalInfected + " / " + totalPeople;
 
-            if ((second <= 0 & interval <= 0) || totalPeople == ControlVariable.Ins.TotalInfected)
+
+            if ((seconds <= 0) || totalPeople == ControlVariable.Ins.TotalInfected)
             {
-                yield return new WaitForSeconds(1f);
-                ShowGameEnd();
-                StopCoroutine(UpdateTime());
+                Debug.Log("Time Up");
                 break;
             }
             else
             {
-                second -= 1;
+                seconds -= 1;
             }
 
-            timerText.text = interval + " : " + second;
-            infectedCounter.text = "Infected : " + ControlVariable.Ins.TotalInfected + " / " + totalPeople;
+            if(seconds > -1)
+                timerText.text = "0 : " + seconds;
         }
+
+        yield return new WaitForSeconds(1f);
+        ShowGameEnd();
+        StopCoroutine(UpdateTime());
     }
 
     private void ShowGameEnd()
     {
-        timeScore.text = ControlVariable.Ins.TimerInMinutes * 60 + " s";
-        score.text = (100 - ((ControlVariable.Ins.TotalInfected / totalPeople) * 100)) + "";
+        timeScore.text = ControlVariable.Ins.TimerInSeconds + " s";
+        score.text = ((int)(100 - ((ControlVariable.Ins.TotalInfected / totalPeople) * 100))) + "";
         gameEnd.SetActive(true);
     }
 }
