@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404d5756fb4263240b7bd771cc43b5fe, type: 3}
   m_Name: MainControlVariable
   m_EditorClassIdentifier: 
-  InfectionTime: 3
+  MinInfectionTime: 1
+  MaxInfectionTime: 2
+  TimerInMinutes: 1
+  TotalInfected: 6
