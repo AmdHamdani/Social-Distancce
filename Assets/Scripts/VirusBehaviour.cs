@@ -8,9 +8,12 @@ public class VirusBehaviour : MonoBehaviour
 
     private float interval = 0;
     private List<Collider2D> nearestAgent = new List<Collider2D>();
+    private SpriteRenderer virusIcon;
 
     private void Start()
     {
+        SetVirusIcon();
+
         if (infection == InfectionState.Infected)
         {
             ShowIndicator();
@@ -21,6 +24,8 @@ public class VirusBehaviour : MonoBehaviour
     {
         if (infection == InfectionState.Infected)
             return;
+
+        SetVirusIcon();
 
         infection = InfectionState.Infecting;
         interval = ControlVariable.Instance.InfectionTime;
@@ -81,9 +86,16 @@ public class VirusBehaviour : MonoBehaviour
             virus.StopInfection();
         }
     }
+
+    private void SetVirusIcon()
+    {
+        var sprites = GetComponentsInChildren<SpriteRenderer>(true);
+        virusIcon = sprites[sprites.Length - 1];
+    }
+
     private void ShowIndicator()
     {
-        GetComponent<SpriteRenderer>().color = Color.green;
+        virusIcon.enabled = true;
     }
 
 }
