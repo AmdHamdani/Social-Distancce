@@ -28,7 +28,7 @@ public class VirusBehaviour : MonoBehaviour
         SetVirusIcon();
 
         infection = InfectionState.Infecting;
-        interval = ControlVariable.Instance.InfectionTime;
+        interval = ControlVariable.Ins.InfectionTime;
     }
 
     public void StopInfection()
@@ -37,7 +37,7 @@ public class VirusBehaviour : MonoBehaviour
             return;
 
         infection = InfectionState.None;
-        interval = ControlVariable.Instance.InfectionTime;
+        interval = ControlVariable.Ins.InfectionTime;
     }
 
     private void Update()
@@ -49,7 +49,7 @@ public class VirusBehaviour : MonoBehaviour
             if (interval <= 0)
             {
                 infection = InfectionState.Infected;
-                ControlVariable.Instance.TotalInfected += 1;
+                ControlVariable.Ins.TotalInfected += 1;
                 ShowIndicator();
             }
         }
@@ -58,7 +58,6 @@ public class VirusBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         nearestAgent.Add(collision);
-        Debug.Log("Add " + collision.gameObject.name);
 
         var virus = collision.gameObject.GetComponent<VirusBehaviour>();
 
@@ -87,8 +86,6 @@ public class VirusBehaviour : MonoBehaviour
     {
         nearestAgent.Remove(collision);
         var virus = collision.GetComponent<VirusBehaviour>();
-
-        Debug.Log("Remove " + collision.gameObject.name);
 
         if (virus != null)
         {
