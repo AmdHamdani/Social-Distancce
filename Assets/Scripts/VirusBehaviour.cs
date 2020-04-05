@@ -96,6 +96,7 @@ public class VirusBehaviour : MonoBehaviour
     private void ShowIndicator()
     {
         virusIcon.enabled = true;
+
     }
 
 }
