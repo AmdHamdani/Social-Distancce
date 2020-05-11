@@ -16,5 +16,5 @@ MonoBehaviour:
   maxInfectionTime: 2
   minSpeed: 1
   maxSpeed: 2
-  timerInMinutes: 1
+  timerInSeconds: 30
   totalInfected: 6
